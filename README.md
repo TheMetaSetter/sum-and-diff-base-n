@@ -1,5 +1,3 @@
-### sum-and-diff-base-n
-
 ## How to compile multiple C++ file in Visual Studio Code?
 - **Step 1:** Open terminal using Ctrl + J or Cmd + J
 - **Step 2**: Use the cd command to move to the directory containing the files
