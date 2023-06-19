@@ -121,21 +121,31 @@ NOTES: To re-compile, you just need to do the step 3 again if you're still at th
 
 /*
 SAMPLE OF 'main.cpp' FILE
- #include "difference.h"
+//Test the difference function
+#include "difference.h"
 
- int main() {
-     string a, b;
-     int base;
-     
-     cout << "Input base: ";
-     cin >> base;
-     cout << "Input number a: ";
-     cin >> a;
-     cout << "Input number b: ";
-     cin >> b;
-     
-     cout << "(|a - b|)_" << base << " = " << difference(a, b, base) << "_" << base << endl;
-     
-     return 0;
- }
+int main() {
+    string a, b;
+    int base;
+    
+    cout << "Input base: ";
+    cin >> base;
+    cout << "Input number a: ";
+    cin >> a;
+    cout << "Input number b: ";
+    cin >> b;
+    
+    string result = difference(a, b, base);
+    if (result == "NaN") {
+        cout << "Function 'difference':" << endl;
+        cout << "Error: Cannot find the difference since the input is invalid." << endl;
+        return 0;
+    }
+    else {
+        cout << "(|a - b|)_" << base << " = " << result << "_" << base << endl;
+    }
+    
+    return 0;
+}
+
 */
