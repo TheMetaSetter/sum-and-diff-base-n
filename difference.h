@@ -10,8 +10,8 @@ typedef long long ll; //Define long long as ll
 
 //Create 'Value' datatype containing the string of the input and its decimal value
 struct Value {
-    string str = "";
-    ll dec = NAN;
+    string str;
+    ll dec;
     Value(string str) : str(str), dec(NAN) {}
     Value(string str, ll dec) : str(str), dec(dec) {}
 };
