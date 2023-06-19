@@ -19,7 +19,7 @@ ll convertBaseNDigitToDigit(char d, int base) {
         return 45;
     }
     //If d is not from any range listed above
-    else result = LONG_LONG_MAX;
+    else result = LLONG_MAX;
     
     //If the value of d is larger than or equal to the original base, then the input is invalid.
     if (result >= base) {
@@ -104,6 +104,15 @@ string difference(string x, string y, int base) {
     
     return convertDecimalToBaseN(diff, base);
 }
+
+/*
+Compile multiple C++ file in Visual Studio Code
+Step 1: Open terminal using Ctrl + J or Cmd + J
+Step 2: Use the cd command to move to the directory containing the files
+Step 3: Enter 'g++ main.cpp difference.cpp -o main
+Step 4: Enter ./main and and start using
+NOTES: To re-compile, you just need to do the step 3 again if you're still at the directory as before.
+*/
 
 /*
 SAMPLE OF 'main.cpp' FILE
