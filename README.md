@@ -5,7 +5,7 @@
 - **Step 2**: Use the cd command to move to the directory containing the files
 - **Step 3:** Enter 'g++ main.cpp difference.cpp -o main
 - **Step 4:** Enter ./main and and start using
-# NOTES: To re-compile, you just need to do the step 3 again if you're still at the directory as before.
+- **NOTES**: To re-compile, you just need to do the step 3 again if you're still at the directory as before.
 
 ## SAMPLE OF 'main.cpp' FILE
 
