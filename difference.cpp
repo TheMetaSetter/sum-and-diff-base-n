@@ -98,8 +98,13 @@ string difference(string x, string y, int base) {
     //Step 1: Calculate a.dec and b.dec base on a.str and b.str
     a.dec = convertValueToDecimal(a.str, base);
     b.dec = convertValueToDecimal(b.str, base);
+    
+    //Step 2: If a and b is invalid
+    if (a.dec == -1 || b.dec == - 1) {
+        return "NaN";
+    }
 
-    //Step 2: Calculate the diff
+    //Step 3: Calculate the diff
     diff = abs(a.dec - b.dec);
     
     return convertDecimalToBaseN(diff, base);

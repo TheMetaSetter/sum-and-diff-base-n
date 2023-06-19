@@ -12,7 +12,15 @@ int main() {
     cout << "Input number b: ";
     cin >> b;
     
-    cout << "(|a - b|)_" << base << " = " << difference(a, b, base) << "_" << base << endl;
+    string result = difference(a, b, base);
+    if (result == "NaN") {
+        cout << "Function 'difference':" << endl;
+        cout << "Error: Cannot find the difference since the input is invalid." << endl;
+        return 0;
+    }
+    else {
+        cout << "(|a - b|)_" << base << " = " << result << "_" << base << endl;
+    }
     
     return 0;
 }
