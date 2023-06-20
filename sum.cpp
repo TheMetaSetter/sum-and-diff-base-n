@@ -1,7 +1,4 @@
-#include <iostream>
-#include <stack>
-
-using namespace std;
+#include "sum.hpp"
 
 stack<long> sumofBase(long x, long y, int base)
 {   
@@ -13,11 +10,13 @@ stack<long> sumofBase(long x, long y, int base)
     long sum = 0; //sum of two digits
     bool returnYet = false; //check whether the calculation has returned excess value
 
+    //Loop through every digit of the two numbers to do calculation
     while(x != 0 || y != 0)
     {
         c1 = x % 10;
         c2 = y % 10;
 
+        //Check if the remaining of the divisons has been taken to calculate
         if(returnYet)
         {
             sum = c1 + c2 + res;
@@ -28,6 +27,7 @@ stack<long> sumofBase(long x, long y, int base)
             sum = c1 + c2;
         }
 
+        //Compare the sum of the digits with the base
         if(sum < base)
         {
             sumRes.push(sum);
@@ -43,6 +43,7 @@ stack<long> sumofBase(long x, long y, int base)
         y /= 10;
     }
     
+    //if the remaining of the division has not been calculated pushed to the result
     if(returnYet)
     {
         if(x == 0 && y == 0 && res != 0)
@@ -50,26 +51,28 @@ stack<long> sumofBase(long x, long y, int base)
             sumRes.push(res);
         }
     }
-    // else if (base == 10)
-    // {
-    //     if(total % 10 != 0)
-    //     {
-    //          if(x == 0 && y == 0 && res != 0)
-    //         {
-    //             sumRes.push(res);
-    //         }
-    //     }
-    // }   
-
     return sumRes;
 }
 
 void printStack(const stack<long>& s) {
     for (auto it = s; !it.empty(); it.pop()) {
-        cout << it.top() << " ";  // Prlong the top element
+        cout << it.top();  // Print the top element
     }
-    cout << std::endl;
+    cout << endl;
 }
+
+/*
+Compile multiple C++ file in Visual Studio Code
+Step 1: Open terminal using Ctrl + J or Cmd + J
+Step 2: Use the cd command to move to the directory containing the files
+Step 3: Enter 'g++ main.cpp difference.cpp -o main
+Step 4: Enter ./main and and start using
+NOTES: To re-compile, you just need to do the step 3 again if you're still at the directory as before.
+*/
+
+//TEST THE SUM FUNCTION
+
+/*
 
 int main()
 {
@@ -89,3 +92,5 @@ int main()
 
     return 0;
 }
+
+*/
