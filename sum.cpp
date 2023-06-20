@@ -61,6 +61,8 @@ void printStack(const stack<long>& s) {
     cout << endl;
 }
 
+/*
+
 int main()
 {
     int base = 0; // 2<= base <= 10
@@ -79,3 +81,5 @@ int main()
 
     return 0;
 }
+
+*/
