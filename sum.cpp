@@ -61,36 +61,21 @@ void printStack(const stack<long>& s) {
     cout << endl;
 }
 
-/*
-Compile multiple C++ file in Visual Studio Code
-Step 1: Open terminal using Ctrl + J or Cmd + J
-Step 2: Use the cd command to move to the directory containing the files
-Step 3: Enter 'g++ main.cpp difference.cpp -o main
-Step 4: Enter ./main and and start using
-NOTES: To re-compile, you just need to do the step 3 again if you're still at the directory as before.
-*/
-
-//TEST THE SUM FUNCTION
-
-/*
-
 int main()
 {
     int base = 0; // 2<= base <= 10
     long x = 0;
     long y = 0;
 
-    cout << "Enter the base: ";
-    cin >> base;
+//     cout << "Enter the base: ";
+//     cin >> base;
 
-    cout << "Enter two numbers: ";
-    cin >> x >> y;
+//     cout << "Enter two numbers: ";
+//     cin >> x >> y;
 
-    stack<long> s = sumofBase(x,y,base);
+//     stack<long> s = sumofBase(x,y,base);
 
-    printStack(s);
+//     printStack(s);
 
     return 0;
 }
-
-*/
