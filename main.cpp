@@ -20,16 +20,25 @@ int main() {
         {
             cout << "Enter the base: ";
             cin >> base;
-
             cout << "Enter the 1st number: ";
             cin >> x;
             cout << "Enter the 2nd number: ";
             cin >> y;
 
+            while(checkValid(x,y,base))
+            {
+                cout << "Wrong Inputs.\n";
+                cout << "Enter the 1st number: ";
+                cin >> x;
+                cout << "Enter the 2nd number: ";
+                cin >> y;
+            }
+
             stack<long> s = sumofBase(x,y,base);
-            
             cout << "Result: ";
             printStack(s);
+            
+            
         }
         else if(lc == 2)
         {

@@ -1,5 +1,32 @@
 #include "sum.hpp"
 
+//check if whether the input of x and y is valid following the base
+bool checkValid(long x, long y, int base)
+{
+    int digit = 0;
+
+    while(x != 0 && y != 0)
+    {
+        digit = x % 10;
+
+        if(digit >= base)
+        {
+            return true;
+        }
+        
+        digit = y % 10;
+
+        if(digit >= base)
+        {
+            return true;
+        }
+
+        x/= 10;
+        y/= 10; 
+    }
+    return false;
+}
+
 stack<long> sumofBase(long x, long y, int base)
 {   
     stack<long> sumRes;
