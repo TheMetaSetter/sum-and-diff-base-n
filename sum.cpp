@@ -61,11 +61,11 @@ void printStack(const stack<long>& s) {
     cout << endl;
 }
 
-// int main()
-// {
-//     int base = 0; // 2<= base <= 10
-//     long x = 0;
-//     long y = 0;
+int main()
+{
+    int base = 0; // 2<= base <= 10
+    long x = 0;
+    long y = 0;
 
 // //     cout << "Enter the base: ";
 // //     cin >> base;
@@ -77,5 +77,5 @@ void printStack(const stack<long>& s) {
 
 // //     printStack(s);
 
-//     return 0;
-// }
+    return 0;
+}
