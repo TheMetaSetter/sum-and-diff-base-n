@@ -1,4 +1,4 @@
-#include "difference.h"
+#include "difference.hpp"
 
 ll convertBaseNDigitToDigit(char d, int base) {
     ll result = NAN;

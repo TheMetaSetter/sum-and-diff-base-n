@@ -1,5 +1,5 @@
-#ifndef difference_h
-#define difference_h
+#ifndef difference_hpp
+#define difference_hpp
 
 #include <iostream>
 #include <string>
@@ -12,7 +12,7 @@ typedef long long ll; //Define long long as ll
 struct Value {
     string str;
     ll dec;
-    Value(string str) : str(str), dec(NAN) {}
+    Value(string str) : str(str), dec(ll(NAN)) {}
     Value(string str, ll dec) : str(str), dec(dec) {}
 };
 

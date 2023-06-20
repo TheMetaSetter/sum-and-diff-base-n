@@ -1,5 +1,5 @@
 //Test the difference function
-#include "difference.h"
+#include "difference.hpp"
 
 int main() {
     string a, b;
