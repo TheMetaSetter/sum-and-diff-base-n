@@ -7,7 +7,7 @@
 
 ## Sample of 'main.cpp' file
 
-```
+```C++
 #include "difference.hpp"
 #include "sum.hpp"
 
