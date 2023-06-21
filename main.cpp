@@ -3,11 +3,6 @@
 #include "sum.hpp"
 
 int main() {
-    string a, b;
-    int x, y;
-    int base;
-    int lc = 0;
-    
     int stop = 0;
     while (stop == 0) {
         cout << "-----------------------MENU------------------------\n";
@@ -15,12 +10,16 @@ int main() {
         cout << "2. Difference of Two Integers of Optional Base.\n";
         cout << "---------------------------------------------------\n";
 
+        int option;
         cout << "Choose option: ";
-        cin >> lc;
+        cin >> option;
 
-        switch (lc) {
+        switch (option) {
             case 1:
             {
+                int x, y;
+                int base;
+
                 cout << "Enter the base: ";
                 cin >> base;
                 cout << "Enter the 1st number: ";
@@ -46,6 +45,9 @@ int main() {
             }
             case 2:
             {
+                string a, b;
+                int base;
+
                 cout << "Input base: ";
                 cin >> base;
                 cout << "Input number a: ";
