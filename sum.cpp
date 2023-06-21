@@ -87,22 +87,3 @@ void printStack(const stack<long>& s) {
     }
     cout << endl;
 }
-
-int main()
-{
-    int base = 0; // 2<= base <= 10
-    long x = 0;
-    long y = 0;
-
-// //     cout << "Enter the base: ";
-// //     cin >> base;
-
-// //     cout << "Enter two numbers: ";
-// //     cin >> x >> y;
-
-// //     stack<long> s = sumofBase(x,y,base);
-
-// //     printStack(s);
-
-    return 0;
-}

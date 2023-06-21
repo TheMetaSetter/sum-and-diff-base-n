@@ -32,6 +32,30 @@ ll convertBaseNDigitToDigit(char d, int base) {
     }
 }
 
+char convertDecimalToBaseNDigit(int dec, int base) {
+    //If the decimal value is larger than the base, then we return the NULL value of char.
+    if (dec >= base) {
+        cout << "Function 'convertDigitToBaseNDigit': " << endl;
+        cout << "Error: Cannot convert decimal value to base-n digit since the decimal value is larger than the target base." << endl;
+        return 0;
+    }
+    else {
+        if (dec >= 0 && dec <= 9) {
+            return (char)(dec + 48);
+        }
+        //If the decimal value 
+        else if (dec >= 10 && dec <= 35) {
+            return (char)(dec + 55);
+        }
+        //If the decimal value is invalid
+        else {
+            cout << "Function 'convertDigitToBaseNDigit': " << endl;
+            cout << "Error: Cannot convert decimal value to base-n digit since the decimal value is invalid - less than 0 or larger than 35." << endl;
+            return 0;
+        }
+    }
+}
+
 ll convertValueToDecimal(string n, int base) {
     ll dec = 0;
     int power = 0;
@@ -48,7 +72,7 @@ ll convertValueToDecimal(string n, int base) {
         
         //If the value of d is larger than or equal to the original base, then the input is invalid.
         if (curr_digit_dec == -1) {
-            cout << "Function 'convertValueToDecimal' function:" << endl;
+            cout << "Function 'convertValueToDecimal':" << endl;
             cout << "Error: Cannot convert to decimal since the input is invalid." << endl;
             return -1;
         }
@@ -77,8 +101,16 @@ string convertDecimalToBaseN(ll dec, int base) {
         //Calculate the remainder
         remainder = temp % base;
         
-        //Add the remainder to the string
-        result = to_string(remainder) + result;
+        //Convert the remainder to the appropriate base
+        char remainder_char = convertDecimalToBaseNDigit(remainder, base);
+        if (remainder_char == 0) {
+            cout << "Function 'convertDecimalToBaseN':" << endl;
+            cout << "Error: Cannot convert decimal value to base-n value since the decimal value is invalid." << endl;
+            return 0;
+        }
+
+        //Add the remainder_char to the result string
+        result = remainder_char + result;
         
         //Update the temp variable
         temp /= base;
