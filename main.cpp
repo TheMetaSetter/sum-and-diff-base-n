@@ -1,4 +1,3 @@
-//Test the difference function
 #include "difference.hpp"
 #include "sum.hpp"
 
