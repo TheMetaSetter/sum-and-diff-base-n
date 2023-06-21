@@ -5,22 +5,21 @@
 - **Step 4:** Enter ./main and and start using
 - **NOTES**: To re-compile, you just need to do the step 3 again if you're still at the directory as before.
 
-## SAMPLE OF 'main.cpp' FILE
+## Sample of 'main.cpp' file
 
 ```
-//Test the sum and difference functions
 #include "difference.hpp"
 #include "sum.hpp"
 
 int main() {
     int stop = 0;
-    while(stop == 0)
-    {
-        int option;
+    while (stop == 0) {
         cout << "-----------------------MENU------------------------\n";
         cout << "1. Sum of Two Integers of Optional Base.(2 <= base <= 10)\n";
         cout << "2. Difference of Two Integers of Optional Base.\n";
         cout << "---------------------------------------------------\n";
+
+        int option;
         cout << "Choose option: ";
         cin >> option;
 
@@ -32,17 +31,23 @@ int main() {
 
                 cout << "Enter the base: ";
                 cin >> base;
-
                 cout << "Enter the 1st number: ";
                 cin >> x;
                 cout << "Enter the 2nd number: ";
                 cin >> y;
 
+                while(checkValid(x,y,base)) {
+                    cout << "Wrong Inputs.\n";
+                    cout << "Enter the 1st number: ";
+                    cin >> x;
+                    cout << "Enter the 2nd number: ";
+                    cin >> y;
+                }
+
                 stack<long> s = sumofBase(x,y,base);
-                
                 cout << "Result: ";
                 printStack(s);
-
+                
                 cout << "Stop? (1 - YES, 0 - NO): ";
                 cin >> stop;
                 break;
@@ -51,7 +56,7 @@ int main() {
             {
                 string a, b;
                 int base;
-                
+
                 cout << "Input base: ";
                 cin >> base;
                 cout << "Input number a: ";
@@ -75,10 +80,7 @@ int main() {
             }
             default:
             {
-                cout << "This option doesn't exist." << endl;
-
-                cout << "Stop? (1 - YES, 0 - NO): ";
-                cin >> stop;
+                cout << "Option doesn't exist." << endl;
                 break;
             }
         }
