@@ -91,7 +91,7 @@ string convertDecimalToBaseN(ll dec, int base) {
     //Create the result string
     string result = "";
     //Create the remainder variable
-    ll temp = sqrt(dec * dec);
+    ll temp = abs(dec);
     int remainder = base;
     
     //If temp is 0
@@ -137,7 +137,7 @@ string difference(string x, string y, int base) {
     }
 
     //Step 3: Calculate the diff
-    diff = abs(a.dec - b.dec);
+    diff = a.dec - b.dec;
     
     return convertDecimalToBaseN(diff, base);
 }

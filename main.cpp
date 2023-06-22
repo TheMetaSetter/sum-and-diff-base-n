@@ -61,7 +61,7 @@ int main() {
                     return 0;
                 }
                 else {
-                    cout << "(|a - b|)_" << base << " = " << result << "_" << base << endl;
+                    cout << "(a - b)_" << base << " = " << result << "_" << base << endl;
                 }
 
                 cout << "Stop? (1 - YES, 0 - NO): ";
