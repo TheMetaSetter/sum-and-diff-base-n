@@ -1,7 +1,7 @@
 ## How to compile multiple C++ file in Visual Studio Code?
 - **Step 1:** Open terminal using Ctrl + J or Cmd + J
 - **Step 2**: Use the cd command to move to the directory containing the files
-- **Step 3:** Enter 'g++ main.cpp difference.cpp -o main
+- **Step 3:** Enter 'g++ main.cpp difference.cpp -o main'
 - **Step 4:** Enter ./main and and start using
 - <ins>**NOTES**</ins>: To re-compile, you just need to do the step 3 again if you're still at the directory as before.
 
