@@ -1,6 +1,106 @@
 #include "sum.hpp"
 
-//check if whether the input of x and y is valid following the base
+string upperCase(string s)
+{
+    for(char& c : s)
+    {
+        c = toupper(c);
+    }
+    return s;
+}
+
+int convertToNumb(char c)
+{
+    return (int) c - 55;
+}
+
+char convertToChar(int n)
+{
+    return (char) (n+55);
+}
+
+int convertToDecimal(string A, int base)
+{
+    int expoNent = 0;
+    char c;
+    int res = 0;
+
+    for(int i = A.length() - 1; i >= 0; i--)
+    {
+        c = A[i];
+        //cout << convertToNumb(c) << " ";
+        int temp = c - '0';
+        if(0 <= temp && temp <= 9)
+        {
+            res += temp * pow(base,expoNent);
+        }
+        else
+        {
+            res += convertToNumb(c) * pow(base,expoNent);
+        }
+        
+        expoNent++;
+    }
+    
+    return res; 
+}
+
+stack<char> sumOfBase_36(string A, string B, int base)
+{
+    int x = convertToDecimal(A,base);
+    int y = convertToDecimal(B,base);
+    int remainings = 0;
+
+    int total = x + y;
+
+    stack<char> res;
+
+    while(total != 0)
+    {
+        remainings = total % base;
+
+        if( 0 <= remainings && remainings <= 9)
+        {
+            res.push(remainings +'0');
+        }
+        else 
+        {
+            res.push(convertToChar(remainings));
+        }
+
+        total /= base;
+    }
+
+    return res;
+}
+
+bool checkValid_36(string A, string B, int base)
+{
+    for(char& c : A)
+    {
+        if( c - '0' > 9)
+        {
+            if(convertToNumb(c) >= base)
+            {
+                return false;
+            }
+        }
+    }
+
+    for(char& c : B)
+    {
+        if( c - '0' > 9)
+        {
+            if(convertToNumb(c) >= base)
+            {
+                return false;
+            }
+        }
+    }
+
+    return true;
+}
+
 bool checkValid(long x, long y, int base)
 {
     int digit = 0;
@@ -81,9 +181,25 @@ stack<long> sumofBase(long x, long y, int base)
     return sumRes;
 }
 
+void printStack(const stack<char>& s){
+    for (auto it = s; !it.empty(); it.pop()) {
+        cout << it.top();  // Print the top element
+    }
+    cout << endl;
+}
+
 void printStack(const stack<long>& s) {
     for (auto it = s; !it.empty(); it.pop()) {
         cout << it.top();  // Print the top element
     }
     cout << endl;
 }
+
+// int main(){
+
+//     stack<char> s;
+
+//     s = sumOfBase_36("AB", "CB", 16);
+    
+//    printStack(s);
+// }

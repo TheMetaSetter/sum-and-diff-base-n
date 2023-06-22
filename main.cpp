@@ -21,22 +21,57 @@ int main() {
 
                 cout << "Enter the base: ";
                 cin >> base;
-                cout << "Enter the 1st number: ";
-                cin >> x;
-                cout << "Enter the 2nd number: ";
-                cin >> y;
 
-                while(checkValid(x,y,base)) {
-                    cout << "Wrong Inputs.\n";
+                if(2 <= base && base <= 10){
                     cout << "Enter the 1st number: ";
                     cin >> x;
                     cout << "Enter the 2nd number: ";
                     cin >> y;
-                }
 
-                stack<long> s = sumofBase(x,y,base);
-                cout << "Result: ";
-                printStack(s);
+                    while(checkValid(x,y,base))
+                    {
+                        cout << "Input Digits Should Be Smaller Than The Base.\n";
+                        cout << "Enter the 1st number: ";
+                        cin >> x;
+                        cout << "Enter the 2nd number: ";
+                        cin >> y;
+                    }
+
+                    stack<long> s = sumofBase(x,y,base);
+                    cout << "Result: ";
+                    printStack(s);
+                }
+                else
+                {
+                    string a, b;
+
+                    cout << "Enter 1st number: ";
+                    cin >> a;
+                    a = upperCase(a); 
+                    
+                    cout << "Enter 2nd number: ";
+                    cin >> b;
+                    b = upperCase(b);
+                    
+                    while(!checkValid_36(a,b,base))
+                    {
+                        cout << "Input Digits Should Be Smaller Than The Base.\n";
+
+                        cout << "Enter the 1st number: ";
+                        cin >> a;
+                        a = upperCase(a); 
+
+                        cout << "Enter the 2nd number: ";
+                        cin >> b;
+                        b = upperCase(b);
+                    }
+
+                    stack<char> s;
+                    s = sumOfBase_36(a, b, base);
+                    cout << "Result: ";
+                    printStack(s);
+
+                }
                 
                 cout << "Stop? (1 - YES, 0 - NO): ";
                 cin >> stop;
