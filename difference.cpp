@@ -63,22 +63,22 @@ ll convertValueToDecimal(string n, int base) {
     //Loop from the last digit to the first digit
     for (long long i(n.length() - 1); i >= 0; --i) {
         //Get the value of the current digit in decimal
-        ll curr_digit_dec = convertBaseNDigitToDigit(n[i], base);
+        ll curr_digit_val = convertBaseNDigitToDigit(n[i], base);
         
         //If the first value is the '-' sign
-        if (i == 0 && curr_digit_dec == 45) {
+        if (i == 0 && curr_digit_val == 45) {
             return -dec;
         }
         
         //If the value of d is larger than or equal to the original base, then the input is invalid.
-        if (curr_digit_dec == -1) {
+        if (curr_digit_val == -1) {
             cout << "Function 'convertValueToDecimal':" << endl;
             cout << "Error: Cannot convert to decimal since the input is invalid." << endl;
             return -1;
         }
         
         //For each digit, we multiply it to the base to the power and add the total value to the dec variable.
-        dec += (ll)(curr_digit_dec * pow(base, power));
+        dec += (ll)(curr_digit_val * pow(base, power));
         
         //Increase the power
         ++power;
